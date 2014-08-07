@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_position_employment_tree" model="ir.ui.view">
+            <field name="name">position.employment.tree</field>
+            <field name="model">position.employment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <tree string="Position Employment">
+            	<field name="date_from"/>
+            	<field name="date_to"/>
+            	<field name="company"/>
+            	<field name="tel"/>
+            	<field name="position"/>
+            	<field name="salary"/>
+            	<field name="leaving_reason"/>
+            	<field name="name"/>
+            	<field name="application_id"/>
+            </tree>
+            </field>
+        </record>
+
+        <record id="view_position_employment_form" model="ir.ui.view">
+            <field name="name">position.employment.form</field>
+            <field name="model">position.employment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <form string="Position Employment">
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="company"/>
+                <field name="tel"/>
+                <field name="position"/>
+                <field name="salary"/>
+                <field name="leaving_reason"/>
+                <field name="name"/>
+                <field name="application_id"/>
+            </form>
+            </field>
+        </record>
+
+        <record id="view_position_employment_search" model="ir.ui.view">
+            <field name="name">position.employment.search</field>
+            <field name="model">position.employment</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <search string="Position Employment">
+                <newline/>
+                <group expand="0" string="Group By...">
+                    <filter string="From" domain="[]" context="{'group_by':'date_from'}"/>
+                    <filter string="To" domain="[]" context="{'group_by':'date_to'}"/>
+                    <filter string="Employer name" domain="[]" context="{'group_by':'company'}"/>
+                    <filter string="Telephone No." domain="[]" context="{'group_by':'tel'}"/>
+                    <filter string="Position" domain="[]" context="{'group_by':'position'}"/>
+                    <filter string="Salary" domain="[]" context="{'group_by':'salary'}"/>
+                    <filter string="Reasons of leaving" domain="[]" context="{'group_by':'leaving_reason'}"/>
+                    <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Position application" domain="[]" context="{'group_by':'application_id'}"/>
+                </group>
+            </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_position_employment_view">
+            <field name="name">Position Employment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.employment</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_employment_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_employment_view_form">
+            <field name="act_window_id" ref="act_open_position_employment_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_position_employment_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_employment_view_tree">
+            <field name="act_window_id" ref="act_open_position_employment_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_position_employment_tree"/>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="wkf_position_application" model="workflow">
+            <field name="name">position.application.basic</field>
+            <field name="osv">position.application</field>
+            <field name="on_create">True</field>           
+        </record>
+        
+        <!-- =============activity ========================= -->
+        <!-- start -->
+        <record id="position_application_act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="flow_start">True</field>
+            <field name="name">draft</field>
+        </record>
+        
+        
+        <!-- origalsConfirming 
+        <record id="position_application_act_origals_confirming" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">origalsConfirming</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'origalsConfirming'})</field>
+        </record>
+        -->
+        
+        <!-- HR -->
+        <record id="position_application_act_hr" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">HR</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'HR'})</field>
+        </record>
+        
+        <!-- skills 
+        <record id="position_application_act_skills" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">skills</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'skills'})</field>
+        </record>
+        -->
+        
+        <!-- sectionManager -->
+        <record id="position_application_act_section_manager" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">sectionManager</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'sectionManager'})</field>
+        </record>
+        
+        <!-- deptManager -->
+        <record id="position_application_act_dept_manager" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">deptManager</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'deptManager'})</field>
+        </record>
+        
+        <!-- VP -->
+        <record id="position_application_act_vp" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">VP</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'VP'})</field>
+        </record>
+        
+        <!-- president -->
+        <record id="position_application_act_president" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">president</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'president'})</field>
+        </record>
+        
+        <!-- contact -->
+        <record id="position_application_act_contact" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="name">contact</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'contract'})</field>
+        </record>
+        
+        <!-- cancel -->
+        <record id="position_application_act_cancel" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="flow_stop">True</field>
+            <field name="name">cancel</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'cancel'})</field>
+        </record>
+        
+        <!-- done -->
+        <record id="position_application_act_done" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_position_application"/>
+            <field name="flow_stop">True</field>
+            <field name="name">done</field>
+            <field name="kind">function</field>
+            <field name="action">write({u'state':u'done'})</field>
+        </record>
+        
+        <!-- ======================transactions ========================= -->
+        <!-- submit -->
+        <record id="position_application_trans_draft_hr" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_draft"/>
+            <field name="act_to" ref="position_application_act_hr"/>
+            <field name="signal">btn_draft_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <!--
+        <record id="position_application_trans_origals_hr" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_origals_confirming"/>
+            <field name="act_to" ref="position_application_act_hr"/>
+            <field name="signal">btn_origals_submit</field>
+            <field name="condition">True</field>
+        </record>
+        -->
+        
+        <record id="position_application_trans_hr_section" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_hr"/>
+            <field name="act_to" ref="position_application_act_section_manager"/>
+            <field name="signal">btn_hr_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <!--
+        <record id="position_application_trans_skills_section" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_skills"/>
+            <field name="act_to" ref="position_application_act_section_manager"/>
+            <field name="signal">btn_skills_submit</field>
+            <field name="condition">True</field>
+        </record>
+        -->
+        
+        <record id="position_application_trans_section_dept" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_section_manager"/>
+            <field name="act_to" ref="position_application_act_dept_manager"/>
+            <field name="signal">btn_section_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_dept_vp" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_dept_manager"/>
+            <field name="act_to" ref="position_application_act_vp"/>
+            <field name="signal">btn_dept_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_vp_president" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_vp"/>
+            <field name="act_to" ref="position_application_act_president"/>
+            <field name="signal">btn_vp_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_president_contact" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_president"/>
+            <field name="act_to" ref="position_application_act_contact"/>
+            <field name="signal">btn_president_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_contract_done" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_contact"/>
+            <field name="act_to" ref="position_application_act_done"/>
+            <field name="signal">btn_contact_submit</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <!-- reject -->        
+        <record id="position_application_trans_president_vp" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_president"/>
+            <field name="act_to" ref="position_application_act_vp"/>
+            <field name="signal">btn_president_reject</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_vp_dept" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_vp"/>
+            <field name="act_to" ref="position_application_act_dept_manager"/>
+            <field name="signal">btn_vp_reject</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_dept_section" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_dept_manager"/>
+            <field name="act_to" ref="position_application_act_section_manager"/>
+            <field name="signal">btn_dept_reject</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_section_hr" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_section_manager"/>
+            <field name="act_to" ref="position_application_act_hr"/>
+            <field name="signal">btn_section_reject</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_hr_cancel" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_hr"/>
+            <field name="act_to" ref="position_application_act_cancel"/>
+            <field name="signal">btn_hr_cancel</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_contact_cancel" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_contact"/>
+            <field name="act_to" ref="position_application_act_cancel"/>
+            <field name="signal">btn_contact_cancel</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_president_cancel" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_president"/>
+            <field name="act_to" ref="position_application_act_cancel"/>
+            <field name="signal">btn_president_cancel</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_vp_cancel" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_vp"/>
+            <field name="act_to" ref="position_application_act_cancel"/>
+            <field name="signal">btn_vp_cancel</field>
+            <field name="condition">True</field>
+        </record>
+        
+        <record id="position_application_trans_dept_cancel" model="workflow.transition">
+            <field name="act_from" ref="position_application_act_dept_manager"/>
+            <field name="act_to" ref="position_application_act_cancel"/>
+            <field name="signal">btn_dept_cancel</field>
+            <field name="condition">True</field>
+        </record>
+
+    </data>
+</openerp>

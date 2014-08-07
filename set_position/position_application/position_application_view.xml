@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_position_application_tree" model="ir.ui.view">
+            <field name="name">position.application.tree</field>
+            <field name="model">position.application</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+			<tree string="Position Application">
+			                <field name="state"/>
+			                <field name="target_department"/>
+			            	<field name="application_date"/>
+			            	<field name="position_applied"/>
+			            	<field name="expected_salary" invisible="1"/>
+			            	<field name="date_available"/>
+			            	<field name="staff_no"/>
+			            	<field name="photo" widget="image" invisible="1"/>
+			            	<field name="chinese_name"/>
+			            	<field name="english_name"/>
+			            	<field name="sex"/>                
+			            	<field name="president_comment"/>            	
+			            	<field name="final_position"/>
+			            	<field name="nationality"/>
+			            	<field name="nation"/>
+			            	<field name="marital_status"/>			            	 
+			</tree>
+            </field>
+        </record>
+
+        <record id="view_position_application_form" model="ir.ui.view">
+            <field name="name">position.application.form</field>
+            <field name="model">position.application</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <form string="Position Application" version="7.0">
+                <header>
+                
+                <button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_draft_submit','model':'position.application','method':'run_flow','current_step':'draft','type':'submit'}" string = 'submit' states="draft" class = "oe_highlight"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_hr_submit','model':'position.application','method':'run_flow','current_step':'HR','type':'submit'}" string = 'submit' states="HR" class = "oe_highlight" groups="set_position.menu_hr"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_section_submit','model':'position.application','method':'run_flow','current_step':'sectionManager','type':'submit'}" string = 'submit' states="sectionManager" class = "oe_highlight" groups="set_position.section_manager"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_dept_submit','model':'position.application','method':'run_flow','current_step':'deptManager','type':'submit'}" string = 'submit' states="deptManager" class = "oe_highlight" groups="set_position.dept_manager"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_vp_submit','model':'position.application','method':'run_flow','current_step':'VP','type':'submit'}" string = 'submit' states="VP" class = "oe_highlight" groups="set_position.vice_president"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_president_submit','model':'position.application','method':'run_flow','current_step':'president','type':'submit'}" string = 'submit' states="president" class = "oe_highlight" groups="set_position.president"/>
+				<button name="%(set_position.action_audit_win_submit)d" type='action' context="{'signal':'btn_contact_submit','model':'position.application','method':'run_flow','current_step':'contract','type':'submit'}" string = 'submit' states="contract" class = "oe_highlight" groups="set_position.menu_hr"/>
+
+				<button name="%(set_position.action_audit_win_reject)d" type='action' context="{'signal':'btn_president_reject','model':'position.application','method':'run_flow','current_step':'president','type':'reject'}" string = 'reject' states="president" groups="set_position.president"/>
+				<button name="%(set_position.action_audit_win_reject)d" type='action' context="{'signal':'btn_vp_reject','model':'position.application','method':'run_flow','current_step':'VP','type':'reject'}" string = 'reject' states="VP" groups="set_position.vice_president"/>
+				<button name="%(set_position.action_audit_win_reject)d" type='action' context="{'signal':'btn_dept_reject','model':'position.application','method':'run_flow','current_step':'deptManager','type':'reject'}" string = 'reject' states="deptManager" groups="set_position.dept_manager"/>
+				<button name="%(set_position.action_audit_win_reject)d" type='action' context="{'signal':'btn_section_reject','model':'position.application','method':'run_flow','current_step':'sectionManager','type':'reject'}" string = 'reject' states="sectionManager" groups="set_position.section_manager" />
+
+				<button name="%(set_position.action_audit_win_cancel)d" type='action' context="{'signal':'btn_hr_cancel','model':'position.application','method':'run_flow','current_step':'HR','type':'cancel'}" string = 'cancel' states="HR" groups="set_position.menu_hr"/>
+				<button name="%(set_position.action_audit_win_cancel)d" type='action' context="{'signal':'btn_contact_cancel','model':'position.application','method':'run_flow','current_step':'contract','type':'cancel'}" string = 'cancel' states="contract" groups="set_position.menu_hr"/>
+				<button name="%(set_position.action_audit_win_cancel)d" type='action' context="{'signal':'btn_president_cancel','model':'position.application','method':'run_flow','current_step':'president','type':'cancel'}" string = 'cancel' states="president" groups="set_position.president"/>
+				<button name="%(set_position.action_audit_win_cancel)d" type='action' context="{'signal':'btn_vp_cancel','model':'position.application','method':'run_flow','current_step':'VP','type':'cancel'}" string = 'cancel' states="VP" groups="set_position.vice_president"/>
+				<button name="%(set_position.action_audit_win_cancel)d" type='action' context="{'signal':'btn_dept_cancel','model':'position.application','method':'run_flow','current_step':'deptManager','type':'cancel'}" string = 'cancel' states="deptManager" groups="set_position.dept_manager"/>
+
+                <button name="%(set_position.act_open_position_audit_view)d" type="action" string="view log" context="{'search_default_res_id':id}" attrs="{'invisible':[('state','=','draft')]}"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,HR,deptManager,done" statusbar_colors="{&quot;done&quot;:&quot;gray&quot;,&quot;origalsConfirming&quot;:&quot;blue&quot;}"/>
+                </header>
+			    <group>
+			      <group>
+			                <field name="application_date"/>
+			                <field name="position_applied"/>
+			                <field name="expected_salary"/>
+			                <field name="date_available"/>
+			                <field name="target_department"/>
+			      </group>
+			      <group>
+			                <field name="staff_no"/>
+			                <field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+			      </group>
+			    </group>
+			
+			    <group>
+			      <group>
+			                <field name="chinese_name"/>
+			                <field name="english_name"/>
+			                <field name="sex"/>
+			                <field name="nationality"/>
+			                <field name="nation"/>
+			                <field name="Id_no"/>
+			                <field name="id_address"/>
+			                <field name="address"/>
+			      </group>
+			      <group>
+			                <field name="permanent_address"/>
+			                <field name="birthday"/>
+			                <field name="height"/>
+			                <field name="telephone"/>
+			                <field name="emergency_contact"/>
+			                <field name="relationship"/>
+			                <field name="tel_no"/>
+			      </group>
+			    </group>
+			
+			    <group>
+			      <group>
+			                <field name="marital_status"/>
+			                <field name="child_number"/>
+			      </group>
+			      <group>
+			                <field name="spouse_name"/>
+			      </group>
+			    </group>
+			
+			    <group>
+			      <group>
+			                <field name="handedness"/>
+			                <field name="smoking"/>
+			                <field name="left_eyesight"/>
+			                <field name="right_eyesight"/>
+			                <field name="major_surgery"/>
+			      </group>
+			      <group>
+			                <field name="occupational_diseases"/>
+			                <field name="other_diseases"/>
+			                <field name="health"/>
+			
+			      </group>
+			    </group>
+			
+			   <notebook>
+			     <page string="education">
+			                <field name="education" nolable="1">
+			                    <tree string="Position Education" editable="bottom">
+			                        <field name="school"/>
+			                     	<field name="date_from"/>
+			                     	<field name="date_to"/>
+			                     	<field name="major"/>
+			            	        <field name="qualification"/>
+			                   </tree>
+			                </field>
+			       <group>
+			                <field name="other_specialities"/>
+			       </group>
+			     </page>
+			     <page string="employment">
+			       <field name="employment">
+			            <tree string="Position Employment" editable="bottom">
+			            	<field name="date_from"/>
+			            	<field name="date_to"/>
+			            	<field name="company"/>
+			            	<field name="tel"/>
+			            	<field name="position"/>
+			            	<field name="salary"/>
+			            	<field name="leaving_reason"/>
+			            </tree>
+			       </field>
+			       <group>
+			               
+			       </group>
+			     </page>
+			     <page string="verification of originals" states="HR,sectionManager,deptManager,VP,president,contract,done,cancel" groups="set_position.hr_user">
+			       <field name="originals_verification">
+			          <tree string="Position Certification" editable="bottom">
+			            	<field name="name"/>
+			            	<field name="original_checked"/>
+			            	<field name="copies_reserved"/>
+			            	<field name="copies" filename="copies_name"/>
+			            	<field name="copies_name"/>
+			            	<field name="remark"/>
+			            	<field name="identifier"/>
+			            </tree>
+			       </field>
+			       <group>                
+			                <field name="hr_comments"/>
+			       </group>
+			       <field name="contract_info" states="contract,done,cancel" groups="set_position.menu_hr,set_position.menu_president">
+			             <tree string="Position Contract" editable="bottom">
+			            	<field name="name"/>
+			            	<field name="date_start"/>
+			            	<field name="date_end"/>
+			            	<field name="contract_salary" groups="set_position.president,set_position.menu_hr"/>
+			            	<field name="department"/>
+			            	<field name="position"/>
+                            <field name="copies" filename="copies_name"/>
+			            	<field name="copies_name"/>
+			            	<field name="remark"/>
+			            </tree>
+			       </field>
+			     </page>
+			     <page string="department comments" states="sectionManager,deptManager,VP,president,contract,done,cancel" groups="set_position.section_manager">
+			       <field name="skills">
+			             <tree string="Position Skills" editable="bottom">
+			            	<field name="name"/>
+			            	<field name="level"/>
+			            	<field name="remark"/>
+			            </tree>
+			       </field>
+			       <group>
+			                <field name="section_supervisor_comment" widget="text"/>
+			                <field name="dept_manager_comment"  widget="text" groups="set_position.dept_manager"/>
+			       </group>
+			       <group groups="set_position.dept_manager">
+			          <group>
+			                <field name="position_assigned" groups="set_position.dept_manager"/>
+			                <field name="grade" groups="set_position.dept_manager"/>
+			         </group>
+			         <group>
+			                <field name="suggested_start_salary" groups="set_position.dept_manager"/>
+			                <field name="currency" groups="set_position.dept_manager"/>
+			         </group>
+			      </group>
+			     </page>
+			     <page string="V.P. and president comments" states="VP,president,contract,done,cancel" groups="set_position.vice_president">
+			       <group>
+			            <group>
+			                <field name="gm_comment"/>
+			                <field name="gm_remark" widget="text"/>
+			            </group>
+			            <group>
+			                <field name="gm_suggested_position" groups="set_position.vice_president"/>
+			                <field name="gm_starting_salary" groups="set_position.vice_president"/>
+			            </group>
+			       </group>
+			       <group>
+			               
+			       </group>
+			       <group groups="set_position.president">
+			            <group>
+			               <field name="president_comment"/>       
+			                <field name="president_remark"  widget="text" colspan="2"/>
+			            </group>
+			            <group>
+			                <field name="final_position" groups="set_position.president,set_position.menu_hr"/>
+			                <field name="final_starting_salary" groups="set_position.president,set_position.menu_hr"/>
+			            </group>
+			       </group>
+			
+			     </page>
+			   </notebook>    
+			</form>
+            </field>
+        </record>
+
+        <record id="view_position_application_search" model="ir.ui.view">
+            <field name="name">position.application.search</field>
+            <field name="model">position.application</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+             <search string="Position Application">
+                <newline/>
+                <filter name="filter_cancel" string="Canceled" icon="terp-accessories-archiver" domain="[('state','=','cancel')]"/>
+                <filter name="filter_done" string="Done" icon="terp-accessories-archiver" domain="[('state','=','done')]"/>
+                <filter name="filter_auditting" string="Auditting" icon="terp-accessories-archiver" domain="[('state','not in',('cancel','draft','done'))]"/>
+                <field name ="state" string="State"/>
+                <group expand="0" string="Group By...">
+                    <filter string="Date of application" domain="[]" context="{'group_by':'application_date'}"/>
+                    <filter string="Sex" domain="[]" context="{'group_by':'sex'}"/>
+                    <filter string="Nationality" domain="[]" context="{'group_by':'nationality'}"/>
+                    <filter string="Nation" domain="[]" context="{'group_by':'nation'}"/>
+                    <filter string="Marital status" domain="[]" context="{'group_by':'marital_status'}"/>
+                    <filter string="Position" domain="[]" context="{'group_by':'final_position'}"/>
+                    <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                </group>
+             </search>
+            </field>
+        </record>
+        
+        <!-- menu -->
+        <menuitem name="HR WorkFlow"
+            id="base.menu_HR_root"
+            groups="base.group_user"
+            sequence="80"/>
+        <menuitem name="HR"
+            id="menu_HR"
+            groups="base.group_user"
+            parent="base.menu_HR_root"
+            sequence="1"/>            
+       
+
+        <!-- default action(for admin) -->
+        <record model="ir.actions.act_window" id="act_open_position_application_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_application_view_form">
+            <field name="act_window_id" ref="act_open_position_application_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_position_application_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_application_view_tree">
+            <field name="act_window_id" ref="act_open_position_application_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_position_application_tree"/>
+        </record>
+        
+         <menuitem name="position application"
+            id="menu_position_application_action" 
+            groups="base.group_system"
+            parent="menu_HR"
+            action="act_open_position_application_view" 
+            sequence="80"/>
+            <!-- here back up action_audit_win_proxy -->
+            
+        
+        <!-- action for guest -->       
+        <record model="ir.actions.act_window" id="act_open_position_application_guest_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[('state','=','draft')]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">     
+            <p class="oe_view_nocontent_create">
+                click create button to create an position application.
+            </p><p>
+                An position application is used for someone who want to join us,please feel free to fill this.
+            </p>
+            </field>
+        </record>    
+           
+        <menuitem 
+            action="act_open_position_application_guest_view" 
+            id="menu_position_application_guest_action" 
+            name="position application(guest)"
+            groups="set_position.menu_guest"
+            parent="menu_HR" 
+            sequence="1"/> 
+        
+        
+        <!-- action for hr -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_hr_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'HR'}</field>
+        </record>
+        <menuitem 
+            action="act_open_position_application_hr_view" 
+            id="menu_position_application_hr_action" 
+            name="position application(hr)"
+            groups="set_position.menu_hr"
+            parent="menu_HR" 
+            sequence="2"/>
+        
+        <!-- action for section manager -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_sm_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'sectionManager'}</field>
+        </record>
+        <menuitem 
+            action="act_open_position_application_sm_view" 
+            id="menu_position_application_sm_action" 
+            groups="set_position.menu_sm"
+            name="position application(sm)"
+            parent="menu_HR" 
+            sequence="3"/>
+        
+        <!-- action for dept. manager -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_dm_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'deptManager'}</field>
+        </record>
+        <menuitem 
+        	action="act_open_position_application_dm_view" 
+        	id="menu_position_application_dm_action" 
+        	groups="set_position.menu_dm"
+        	name="position application(dm)"
+            parent="menu_HR" 
+            sequence="4"/>
+        
+        <!-- action for vice president -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_vp_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'VP'}</field>
+        </record>
+        <menuitem 
+        	action="act_open_position_application_vp_view" 
+        	id="menu_position_application_vp_action" 
+        	groups="set_position.menu_vp"
+        	name="position application(vp)"
+            parent="menu_HR" 
+            sequence="5"/>
+        
+        <!-- action for president -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_president_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'president'}</field>
+        </record>
+        <menuitem 
+        	action="act_open_position_application_president_view" 
+        	id="menu_position_application_president_action" 
+        	groups="set_position.menu_president"
+        	name="position application(president)"
+            parent="menu_HR" 
+            sequence="6"/>
+        
+        <!-- action for contract -->        
+        <record model="ir.actions.act_window" id="act_open_position_application_contract_view">
+            <field name="name">Position Application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.application</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_application_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_filter_auditting':1,'search_default_state':'contract'}</field>
+        </record>
+        <menuitem 
+        	action="act_open_position_application_contract_view" 
+        	id="menu_position_application_contract_action" 
+        	groups="set_position.menu_hr"
+        	name="position application(contract)"
+            parent="menu_HR" 
+            sequence="7"/>
+    </data>
+</openerp>

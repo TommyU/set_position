@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_position_education_tree" model="ir.ui.view">
+            <field name="name">position.education.tree</field>
+            <field name="model">position.education</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <tree string="Position Education">
+            	<field name="school"/>
+            	<field name="date_from"/>
+            	<field name="date_to"/>
+            	<field name="major"/>
+            	<field name="qualification"/>
+            	<field name="name"/>
+            	<field name="application_id"/>
+            </tree>
+            </field>
+        </record>
+
+        <record id="view_position_education_form" model="ir.ui.view">
+            <field name="name">position.education.form</field>
+            <field name="model">position.education</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <form string="Position Education">
+                <field name="school"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="major"/>
+                <field name="qualification"/>
+                <field name="name"/>
+                <field name="application_id"/>
+            </form>
+            </field>
+        </record>
+
+        <record id="view_position_education_search" model="ir.ui.view">
+            <field name="name">position.education.search</field>
+            <field name="model">position.education</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            <search string="Position Education">
+                <newline/>
+                <group expand="0" string="Group By...">
+                    <filter string="School" domain="[]" context="{'group_by':'school'}"/>
+                    <filter string="From" domain="[]" context="{'group_by':'date_from'}"/>
+                    <filter string="To" domain="[]" context="{'group_by':'date_to'}"/>
+                    <filter string="Major" domain="[]" context="{'group_by':'major'}"/>
+                    <filter string="Qualification" domain="[]" context="{'group_by':'qualification'}"/>
+                    <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                    <filter string="Position application" domain="[]" context="{'group_by':'application_id'}"/>
+                </group>
+            </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_position_education_view">
+            <field name="name">Position Education</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">position.education</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_position_education_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_education_view_form">
+            <field name="act_window_id" ref="act_open_position_education_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_position_education_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_position_education_view_tree">
+            <field name="act_window_id" ref="act_open_position_education_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_position_education_tree"/>
+        </record>
+
+    </data>
+</openerp>

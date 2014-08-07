@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_position_application,model_position_application,model_position_application,base.group_user,1,1,1,1
+access_position_education,model_position_education,model_position_education,base.group_user,1,1,1,1
+access_position_employment,model_position_employment,model_position_employment,base.group_user,1,1,1,1
+access_position_certification,model_position_certification,model_position_certification,base.group_user,1,1,1,1
+access_position_skills,model_position_skills,model_position_skills,base.group_user,1,1,1,1
+access_position_contract,model_position_contract,model_position_contract,base.group_user,1,1,1,1
+access_position_audit,model_position_audit,model_position_audit,base.group_user,1,0,0,0
+access_position_grade,model_position_grade,model_position_grade,base.group_user,1,1,1,0
+access_hr_job,hr.model_hr_job,hr.model_hr_job,base.group_user,1,0,0,0

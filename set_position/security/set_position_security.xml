@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">    
+        <!-- new category -->
+        <record id="base.set_position" model="ir.module.category">
+	        <field name="name">SET position application</field>
+	        <field name="sequence">20</field>
+	        <field name="description">SET position application.</field>
+	    </record>        
+    
+        <!-- new role -->
+        <!--  =====================guest============================================ -->
+        <record model="res.users" id="position_application_guest">
+            <field name="name">guest</field>
+            <field name="login">guest</field>
+            <field name="password">guest</field>
+            <field name="tz">Hongkong</field>
+            <field name="lang">zh_CN</field>
+        </record> 
+        <record id="set_position.menu_guest" model="res.groups">
+	        <field name="name">guest menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for guest.</field>
+	        <field name="users" eval="[(4, ref('set_position.position_application_guest'))]"/>
+	    </record>
+        
+        <!-- =========================hr============================================ -->
+        <record id="set_position.menu_hr" model="res.groups">
+	        <field name="name">HR menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for HR.</field>
+	    </record>
+	    
+	    <record id="set_position.hr_user" model="res.groups">
+	        <field name="name">HR users</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+	        <field name="comment">the user will be able to update the originals document related to the applier.</field>
+	    </record>
+	    
+	    <record id="set_position.hr_manager" model="res.groups">
+	        <field name="name">HR managers</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('set_position.hr_user'))]"/>
+	        <field name="comment">the user will be able to make some remark of the applier.</field>
+	    </record>
+	    
+	    <!-- ================================dept==================================== -->
+	    <!-- section manager menu role-->
+	    <record id="set_position.menu_sm" model="res.groups">
+	        <field name="name">sm menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for section manager.</field>
+	    </record>
+	    
+	    <!-- section manager -->
+	    <record id="set_position.section_manager" model="res.groups">
+	        <field name="name">Section managers</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('set_position.hr_manager'))]"/>
+	        <field name="comment">the user will be able to make note of skills and comments of the applier.</field>
+	    </record>
+	    
+	    <!-- dept manager menu role-->
+	    <record id="set_position.menu_dm" model="res.groups">
+	        <field name="name">dm menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for dept manager.</field>
+	    </record>
+	    
+	    <!-- dept manager -->
+	    <record id="set_position.dept_manager" model="res.groups">
+	        <field name="name">Dept. managers</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('set_position.section_manager'))]"/>
+	        <field name="comment">the user will be able to make comments and suggestion of salary and position of the applier.</field>
+	    </record>
+	    
+	    <!-- vice president menu role-->
+	    <record id="set_position.menu_vp" model="res.groups">
+	        <field name="name">vp menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for vice president.</field>
+	    </record>
+	    
+	    <!-- vp -->
+	    <record id="set_position.vice_president" model="res.groups">
+	        <field name="name">Vice presidents</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('set_position.dept_manager'))]"/>
+	        <field name="comment">the user will be able to make comments and suggestion of salary and position of the applier.</field>
+	    </record>
+	    
+	    <!-- president menu role-->
+	    <record id="set_position.menu_president" model="res.groups">
+	        <field name="name">president menu role</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="comment">the user will be able to access the menu for president.</field>
+	    </record>
+	    
+	    <!-- president -->
+	    <record id="set_position.president" model="res.groups">
+	        <field name="name">President</field>
+	        <field name="category_id" ref="base.set_position"/>
+	        <field name="implied_ids" eval="[(4, ref('set_position.vice_president'))]"/>
+	        <field name="comment">the user will have an access to decide the final result of the application.</field>
+	        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+	    </record>
+	    
+    </data>
+</openerp>

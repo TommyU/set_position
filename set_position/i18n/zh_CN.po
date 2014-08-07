@@ -1,0 +1,973 @@
+# Chinese (Simplified) translation for openobject-addons
+# Copyright (c) 2012 Rosetta Contributors and Canonical Ltd 2012
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-06-07 19:36+0000\n"
+"PO-Revision-Date: 2013-06-07 15:46+0000\n"
+"Last-Translator: Joshua Jan(SHINEIT) <popkar77@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-06-08 07:47+0000\n"
+"X-Generator: Launchpad (build 16667)\n"
+
+#. module: set_position
+#: field:position.application,gm_comment:0
+msgid "GM"
+msgstr "董事总经理意见"
+
+#. module: set_position
+#: field:position.application,expected_salary:0
+msgid "Expected salary"
+msgstr "薪资要求"
+
+#. module: set_position
+#: field:position.application,grade:0
+msgid "Grade"
+msgstr "职级"
+
+#. module: set_position
+#: field:position.application,photo:0
+msgid "Photo"
+msgstr "照片"
+
+#. module: set_position
+#: field:position.application,image_medium:0
+msgid "Medium-sized image"
+msgstr "照片"
+
+#. module: set_position
+#: field:position.application,image_small:0
+msgid "Small-sized image"
+msgstr "照片"
+
+#. module: set_position
+#: field:position.application,telephone:0
+msgid "Telephone"
+msgstr "联系电话"
+
+#. module: set_position
+#: field:position.application,major_surgery:0
+msgid "Major surgery"
+msgstr "有无重大手术"
+
+#. module: set_position
+#: field:position.application,height:0
+msgid "Height"
+msgstr "身高(cm)"
+
+#. module: set_position
+#: field:position.application,final_position:0
+msgid "Position"
+msgstr "职位"
+
+#. module: set_position
+#: field:position.application,currency:0
+msgid "Currency"
+msgstr "币种"
+
+#. module: set_position
+#: field:position.application,english_name:0
+msgid "Name in English"
+msgstr "英文"
+
+#. module: set_position
+#: field:position.application,nationality:0
+msgid "Nationality"
+msgstr "国籍"
+
+#. module: set_position
+#: field:position.application,originals_verification:0
+msgid "Verification of originals"
+msgstr "资料验收确认"
+
+#. module: set_position
+#: field:position.application,permanent_address:0
+msgid "Permanent address"
+msgstr "户口所在地"
+
+#. module: set_position
+#: field:position.application,education:0
+msgid "Education history"
+msgstr "教育背景"
+
+#. module: set_position
+#: field:position.application,employment:0
+msgid "Employment"
+msgstr "受雇情况(从前到后)"
+
+#. module: set_position
+#: field:position.application,final_starting_salary:0
+msgid "Starting salary"
+msgstr "起薪点"
+
+#. module: set_position
+#: field:position.application,president_comment:0
+msgid "President(comment)"
+msgstr "董事长意见"
+
+#. module: set_position
+#: field:position.application,gm_starting_salary:0
+msgid "Starting salary"
+msgstr "起薪点"
+
+#. module: set_position
+#: field:position.application,chinese_name:0
+msgid "Name in Chinese"
+msgstr "中文名称"
+
+#. module: set_position
+#: field:position.application,date_available:0
+msgid "Date available"
+msgstr "可工作日期"
+
+#. module: set_position
+#: field:position.application,target_department:0
+msgid "target department"
+msgstr "申请工作部门"
+
+#. module: set_position
+#: field:position.application,handedness:0
+msgid "Handedness"
+msgstr "惯用手"
+
+#. module: set_position
+#: field:position.application,other_diseases:0
+msgid "Other diseases"
+msgstr "其他疾病"
+
+#. module: set_position
+#: field:position.application,Id_no:0
+msgid "I.D.NO."
+msgstr "身份证号码"
+
+#. module: set_position
+#: field:position.application,president_remark:0
+msgid "Remark"
+msgstr "备注:"
+
+#. module: set_position
+#: field:position.application,health:0
+msgid "Health"
+msgstr "健康状况"
+
+#. module: set_position
+#: field:position.application,occupational_diseases:0
+msgid "Occupational diseases"
+msgstr "有无职业病"
+
+#. module: set_position
+#: field:position.application,tel_no:0
+msgid "TEL NO."
+msgstr "联系电话"
+
+#. module: set_position
+#: field:position.application,birthday:0
+msgid "Date of birth"
+msgstr "出生日期"
+
+#. module: set_position
+#: field:position.application,child_number:0
+msgid "NO. of children"
+msgstr "孩子数量"
+
+#. module: set_position
+#: field:position.application,position_applied:0
+msgid "Position applied"
+msgstr "申请职位"
+
+#. module: set_position
+#: field:position.application,relationship:0
+msgid "Relationship"
+msgstr "关系"
+
+#. module: set_position
+#: field:position.application,nation:0
+msgid "Nation"
+msgstr "民族"
+
+#. module: set_position
+#: field:position.application,emergency_contact:0
+msgid "Emergency contact"
+msgstr "紧急事故联系人"
+
+#. module: set_position
+#: field:position.application,position_assigned:0
+msgid "Position(assigned)"
+msgstr "职位"
+
+#. module: set_position
+#: field:position.application,address:0
+msgid "Address"
+msgstr "通信地址(必填)"
+
+#. module: set_position
+#: field:position.application,other_specialities:0
+msgid "Other specialities"
+msgstr "其他专长"
+
+#. module: set_position
+#: field:position.application,smoking:0
+msgid "Smoking"
+msgstr "是否吸烟"
+
+#. module: set_position
+#: field:position.application,sex:0
+msgid "Sex"
+msgstr "性别"
+
+#. module: set_position
+#: field:position.application,right_eyesight:0
+msgid "right eyesight"
+msgstr "右眼视力"
+
+#. module: set_position
+#: field:position.application,application_date:0
+msgid "Date of application"
+msgstr "申请日期"
+
+#. module: set_position
+#: field:position.application,id_address:0
+msgid "I.D. Address"
+msgstr "身份证地址"
+
+#. module: set_position
+#: field:position.application,gm_remark:0
+msgid "Remark"
+msgstr "备注:"
+
+#. module: set_position
+#: field:position.application,name:0
+msgid "Name"
+msgstr "单号"
+
+#. module: set_position
+#: field:position.application,left_eyesight:0
+msgid "Left eyesight"
+msgstr "左眼视力"
+
+#. module: set_position
+#: field:position.application,skills:0
+msgid "level of skills"
+msgstr "技能水平"
+
+#. module: set_position
+#: field:position.application,hr_comments:0
+msgid "Comment(s) of hr manager"
+msgstr "人事课面试评语"
+
+#. module: set_position
+#: field:position.application,marital_status:0
+msgid "Marital status"
+msgstr "婚姻状态"
+
+#. module: set_position
+#: field:position.application,spouse_name:0
+msgid "Name of spouse"
+msgstr "配偶姓名"
+
+#. module: set_position
+#: field:position.application,suggested_start_salary:0
+msgid "Suggested starting salary"
+msgstr "建议起薪"
+
+#. module: set_position
+#: field:position.application,staff_no:0
+msgid "NO."
+msgstr "工号"
+
+#. module: set_position
+#: field:position.application,dept_manager_comment:0
+msgid "Comment(s) from dept manager"
+msgstr "部长评语"
+
+#. module: set_position
+#: field:position.application,section_supervisor_comment:0
+msgid "Comments from section supervisor"
+msgstr "部门主任/课长评语"
+
+#. module: set_position
+#: field:position.application,contract_info:0
+msgid "Position contract"
+msgstr "合同"
+
+#. module: set_position
+#: field:position.application,gm_suggested_position:0
+msgid "Position"
+msgstr "职位"
+
+#. module: set_position
+#: field:position.audit,comment:0
+msgid "Comment(s)"
+msgstr "(审批人意见)详细"
+
+#. module: set_position
+#: field:position.audit,step:0
+msgid "Step"
+msgstr "(审批)环节"
+
+#. module: set_position
+#: field:position.audit,step_text:0
+msgid "Step"
+msgstr "(审批)环节"
+
+#. module: set_position
+#: field:position.audit,op_type:0
+msgid "Operation type"
+msgstr "审批动作"
+
+#. module: set_position
+#: field:position.audit,op_type_text:0
+msgid "Operation type"
+msgstr "审批动作"
+
+#. module: set_position
+#: field:position.audit,name:0
+msgid "Name"
+msgstr "(审批人)意见"
+
+#. module: set_position
+#: field:position.audit,date:0
+msgid "Date"
+msgstr "审批日期"
+
+#. module: set_position
+#: field:position.audit,model:0
+msgid "Model"
+msgstr "模型"
+
+#. module: set_position
+#: field:position.audit,approver:0
+msgid "Approver"
+msgstr "审批人"
+
+#. module: set_position
+#: field:position.audit,res_id:0
+msgid "resource id"
+msgstr "资源ID"
+
+#. module: set_position
+#: view:position.audit:0
+msgid "return"
+msgstr "返回"
+
+#. module: set_position
+#: view:position.audit:0
+msgid "close"
+msgstr "关闭"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_audit_view
+#: view:position.audit:0
+#: view:position.application:0
+msgid "Auditting log"
+msgstr "审批记录"
+
+#. module: set_position
+#: field:position.certification,copies_name:0
+msgid "File name"
+msgstr "文件名称"
+
+#. module: set_position
+#: field:position.certification,remark:0
+msgid "Remark(s)"
+msgstr "备注"
+
+#. module: set_position
+#: field:position.certification,application_id:0
+msgid "Position application"
+msgstr ""
+
+#. module: set_position
+#: field:position.certification,name:0
+msgid "Name"
+msgstr "名称"
+
+
+#. module: set_position
+#: field:position.certification,copies:0
+msgid "Copies"
+msgstr "复印件"
+
+#. module: set_position
+#: field:position.certification,copies_reserved:0
+msgid "Copies reserved"
+msgstr "复印件保留"
+
+#. module: set_position
+#: field:position.certification,original_checked:0
+msgid "Originals checked"
+msgstr "检查原件"
+
+#. module: set_position
+#: field:position.certification,identifier:0
+msgid "Identifier"
+msgstr "验收人"
+
+#. module: set_position
+#: field:position.certification,copies_data:0
+msgid "Copies"
+msgstr "复印件"
+
+#. module: set_position
+#: field:position.contract,remark:0
+msgid "Remark(s)"
+msgstr "备注"
+
+#. module: set_position
+#: field:position.contract,application_id:0
+msgid "Position application"
+msgstr ""
+
+#. module: set_position
+#: field:position.contract,name:0
+msgid "Labor-contract No."
+msgstr "劳动合同工编号"
+
+#. module: set_position
+#: field:position.contract,date_end:0
+msgid "end date"
+msgstr "结束日期"
+
+#. module: set_position
+#: field:position.contract,date_start:0
+msgid "start date"
+msgstr "开始日期"
+
+#. module: set_position
+#: field:position.contract,contract_salary:0
+msgid "Contract salary"
+msgstr "合同薪资"
+
+#. module: set_position
+#: field:position.contract,department:0
+msgid "Section/Dept."
+msgstr "课,部门"
+
+#. module: set_position
+#: field:position.contract,position:0
+msgid "Position"
+msgstr "职位"
+
+#. module: set_position
+#: field:position.education,date_to:0
+msgid "To"
+msgstr "到"
+
+#. module: set_position
+#: field:position.education,school:0
+msgid "School"
+msgstr "学校"
+
+#. module: set_position
+#: field:position.education,date_from:0
+msgid "From"
+msgstr "从"
+
+#. module: set_position
+#: field:position.education,name:0
+msgid "Name"
+msgstr "名称"
+
+#. module: set_position
+#: field:position.education,qualification:0
+msgid "Qualification"
+msgstr "资格证书"
+
+#. module: set_position
+#: field:position.education,application_id:0
+msgid "Position application"
+msgstr ""
+
+#. module: set_position
+#: field:position.education,major:0
+msgid "Major"
+msgstr "主修科目"
+
+#. module: set_position
+#: field:position.employment,salary:0
+msgid "Salary"
+msgstr "工资"
+
+#. module: set_position
+#: field:position.employment,tel:0
+msgid "Telephone No."
+msgstr "电话号码"
+
+#. module: set_position
+#: field:position.employment,application_id:0
+msgid "Position application"
+msgstr ""
+
+#. module: set_position
+#: field:position.employment,name:0
+msgid "Name"
+msgstr "名称"
+
+#. module: set_position
+#: field:position.employment,company:0
+msgid "Employer name"
+msgstr "公司名称"
+
+#. module: set_position
+#: field:position.employment,leaving_reason:0
+msgid "Reasons of leaving"
+msgstr "离职原因"
+
+#. module: set_position
+#: field:position.employment,date_to:0
+msgid "To"
+msgstr "到"
+
+#. module: set_position
+#: field:position.employment,position:0
+msgid "Position"
+msgstr "职位"
+
+#. module: set_position
+#: field:position.employment,date_from:0
+msgid "From"
+msgstr "从"
+
+#. module: set_position
+#: field:position.grade,memo:0
+msgid "memo"
+msgstr "备注"
+
+#. module: set_position
+#: field:position.grade,name:0
+msgid "Name"
+msgstr "名称"
+
+#. module: set_position
+#: field:position.skills,remark:0
+msgid "Remark(s)"
+msgstr "备注"
+
+#. module: set_position
+#: field:position.skills,application_id:0
+msgid "Position application"
+msgstr ""
+
+#. module: set_position
+#: field:position.skills,name:0
+msgid "Name"
+msgstr "名称"
+
+#. module: set_position
+#: field:position.skills,level:0
+msgid "Level"
+msgstr "水平"
+
+#. module: set_position
+#: field:position.application,state:0
+msgid "state"
+msgstr "状态"
+
+#. module: set_position
+#: view:position.application:0
+msgid "education"
+msgstr "教育背景"
+
+#. module: set_position
+#: view:position.application:0
+msgid "employment"
+msgstr "受雇情况"
+
+#. module: set_position
+#: view:position.application:0
+msgid "verification of originals"
+msgstr "资料验收确认"
+
+#. module: set_position
+#: view:position.application:0
+msgid "department comments"
+msgstr "部门意见"
+
+#. module: set_position
+#: view:position.application:0
+msgid "V.P. and president comments"
+msgstr "总经理 & 董事长意见"
+
+#. module: set_position
+#: view:position.application:0
+msgid "submit"
+msgstr "提交"
+
+#. module: set_position
+#: view:position.application:0
+msgid "reject"
+msgstr "退回"
+
+#. module: set_position
+#: view:position.application:0
+msgid "cancel"
+msgstr "作废"
+
+#. module: set_position
+#: view:position.application:0
+msgid "view log"
+msgstr "查看审批记录"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Auditting"
+msgstr "审批中"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Done"
+msgstr "已完成"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Canceled"
+msgstr "已作废"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Group By..."
+msgstr "分组条件"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Date of application"
+msgstr "申请日期"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Sex"
+msgstr "性别"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Nationality"
+msgstr "国籍"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Nation"
+msgstr "民族"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Marital status"
+msgstr "婚姻状况"
+
+#. module: set_position
+#: view:position.application:0
+msgid "Position"
+msgstr "最终任职"
+
+#. module: set_position
+#: view:position.application:0
+msgid "State"
+msgstr "审批状态"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "draft"
+msgstr "草稿"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "HR"
+msgstr "人事审批"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "Dept. Manager"
+msgstr "部长审批"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "Done"
+msgstr "完成"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "Section Manager"
+msgstr "部门主任&课长审批"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "Vice President"
+msgstr "总经理审批"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "President"
+msgstr "董事长审批"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "Contract"
+msgstr "合同录入"
+
+#. module: set_position
+#: selection:position.application,state:0
+msgid "cancel"
+msgstr "取消"
+
+
+
+#. module: set_position
+#: selection:position.application,sex:0
+msgid "female"
+msgstr "男"
+
+#. module: set_position
+#: selection:position.application,sex:0
+msgid "male"
+msgstr "女"
+
+#. module: set_position
+#: selection:position.application,marital_status:0
+msgid "single"
+msgstr "未婚"
+
+#. module: set_position
+#: selection:position.application,marital_status:0
+msgid "married"
+msgstr "已婚"
+
+#. module: set_position
+#: selection:position.application,marital_status:0
+msgid "divorced"
+msgstr "离婚"
+
+#. module: set_position
+#: selection:position.application,marital_status:0
+msgid "widowed"
+msgstr "丧偶"
+
+#. module: set_position
+#: selection:position.application,handedness:0
+msgid "left"
+msgstr "左"
+
+#. module: set_position
+#: selection:position.application,handedness:0
+msgid "right"
+msgstr "右"
+
+#. module: set_position
+#: selection:position.application,health:0
+msgid "good"
+msgstr "良"
+
+#. module: set_position
+#: selection:position.application,health:0
+msgid "delecate"
+msgstr "差"
+
+#. module: set_position
+#: selection:position.application,gm_comment:0
+#: selection:position.application,president_comment:0
+msgid "accepted"
+msgstr "录用"
+
+#. module: set_position
+#: selection:position.application,gm_comment:0
+#: selection:position.application,president_comment:0
+msgid "not suitable"
+msgstr "不录用"
+
+#. module: set_position
+#: selection:position.application,gm_comment:0
+#: selection:position.application,president_comment:0
+msgid "reserved"
+msgstr "保留"
+
+#. module: set_position
+#: selection:position.skills,level:0
+msgid "excellent"
+msgstr "优秀"
+
+#. module: set_position
+#: selection:position.skills,level:0
+msgid "fair"
+msgstr "良好"
+
+#. module: set_position
+#: selection:position.skills,level:0
+msgid "general"
+msgstr "一般"
+
+#. module: set_position
+#: selection:position.skills,level:0
+msgid "poor"
+msgstr "差"
+
+#. module: set_position
+#: field:audit.win,name:0
+msgid "To do"
+msgstr "意见概要"
+
+#. module: set_position
+#: field:audit.win,comment:0
+msgid "comments"
+msgstr "意见详细"
+
+#. module: set_position
+#: view:audit.win:0
+msgid "Cancel the application"
+msgstr "作废此申请"
+
+#. module: set_position
+#: view:audit.win:0
+msgid "Submit"
+msgstr "提交此申请"
+
+#. module: set_position
+#: view:audit.win:0
+msgid "Reject"
+msgstr "驳回此申请"
+
+
+#. module: set_position
+#: view:audit.win:0
+msgid "Cancel"
+msgstr "取消"
+
+#. module: set_position
+#: view:audit.win:0
+msgid "or"
+msgstr " 或  "
+
+#. module: set_position
+#: view:audit.win:0
+msgid "info:you're going to cancel the application.please be careful about this action."
+msgstr "温馨提示：您即将要撤销这个申请，请确认是否想要这样做（以防止疏忽）。 "
+
+#. module: set_position
+#: view:audit.win:0
+msgid "info:you are going to submit the application.please be careful about this action."
+msgstr "温馨提示：您即将要提交这个申请，请确认是否想要这样做（以防止疏忽）。 "
+
+#. module: set_position
+#: view:audit.win:0
+msgid "info:you're going to reject the application.please be careful about this action."
+msgstr "温馨提示：您即将要退回这个申请，请确认是否想要这样做（以防止疏忽）。 "
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.action_audit_win_submit
+#: view:audit.win:0
+#: view:position.application:0
+msgid "Submit the application"
+msgstr "提交申请单"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.action_audit_win_reject
+#: view:audit.win:0
+#: view:position.application:0
+msgid "Reject the application"
+msgstr "退回申请单"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.action_audit_win_cancel
+#: view:audit.win:0
+#: view:position.application:0
+msgid "Cancel the application"
+msgstr "作废申请单"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_action
+msgid "position application"
+msgstr "职位申请表"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_guest_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_guest_action
+msgid "position application(guest)"
+msgstr "职位申请表(来宾填写)"
+
+#. module: set_position
+#: model:ir.actions.act_window,help:set_position.act_open_position_application_guest_view
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                click create button to create an position application.\n"
+"            </p><p>\n"
+"                An position application is used for someone who want to join us,please feel free to fill this.\n"  
+"            </p>\n"  
+"            </field>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                点击[创建]按钮来创建一个职位申请表。\n"
+"            </p><p>\n"
+"                职位申请表是您加入我司的第一步，请根据您的实际情况来填写。\n"  
+"            </p>\n"  
+"            </field>\n"
+"            "
+
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_hr_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_hr_action
+msgid "position application(hr)"
+msgstr "职位申请表(人资验证)"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_sm_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_sm_action
+msgid "position application(sm)"
+msgstr "职位申请表(课长审批)"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_dm_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_dm_action
+msgid "position application(dm)"
+msgstr "职位申请表(部长审批)"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_vp_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_vp_action
+msgid "position application(vp)"
+msgstr "职位申请表(总经理审批)"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_president_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_president_action
+msgid "position application(president)"
+msgstr "职位申请表(董事长审批)"
+
+#. module: set_position
+#: model:ir.actions.act_window,name:set_position.act_open_position_application_contract_view
+#: model:ir.ui.menu,name:set_position.menu_position_application_contract_action
+msgid "position application(contract)"
+msgstr "职位申请表(合同录入)"
+
+#. module: set_position
+#: model:ir.ui.menu,name:set_position.menu_HR
+msgid "HR"
+msgstr "人资"
+
+#. module: set_position
+#: model:ir.ui.menu,name:base.menu_HR_root
+msgid "HR WorkFlow"
+msgstr "人资流程"
+
+#. module: set_position
+#: view:res.users:0
+msgid "Add Employee"
+msgstr "新增员工 "
+
+#. module: set_position
+#: help:res.users,employee_id:0
+msgid "Employee-related data of the user"
+msgstr "此登入用户对应的员工。（注：此栏位对于非管理员admin以为的用户建议必需新增，否则可能影响人资流程的审批（找不到对应的单据）。如果不存在可以手动通过下面的[新增员工]按钮添加）"
+
+#. module: set_position
+#: field:res.users,employee_id:0
+msgid "Related Employee"
+msgstr "对应员工"
+
+

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- submit view -->
+        <record id="view_audit_win_submit" model="ir.ui.view">
+            <field name="name">submitting window</field>
+            <field name="model">audit.win</field>
+            <field name="arch" type="xml">
+             <form string="Auditting window" version="7.0">
+                <p class="oe_grey">
+                   info:you are going to submit the application.please be careful about this action.
+                </p>
+                <group>
+                   <field name="name"/>
+                   <field name="comment" widget ="text"/>
+                </group>
+                <footer>
+                    <button name="audit_win_submit" string="Submit" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+       
+        <!-- reject view -->
+        <record id="view_audit_win_reject" model="ir.ui.view">
+            <field name="name">rejecting window</field>
+            <field name="model">audit.win</field>
+            <field name="arch" type="xml">
+             <form string="Auditting window" version="7.0">
+                <p class="oe_grey">
+                   info:you're going to reject the application.please be careful about this action.
+                </p>
+                <group>
+                   <field name="name"/>
+                   <field name="comment" widget ="text"/>
+                </group>
+                <footer>
+                    <button name="audit_win_submit" string="Reject" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+        
+        <!-- cancel view -->
+        <record id="view_audit_win_cancel" model="ir.ui.view">
+            <field name="name">rejecting window</field>
+            <field name="model">audit.win</field>
+            <field name="arch" type="xml">
+             <form string="Auditting window" version="7.0">
+                <p class="oe_grey">
+                   info:you're going to cancel the application.please be careful about this action.
+                </p>
+                <group>
+                   <field name="name"/>
+                   <field name="comment" widget ="text"/>
+                </group>
+                <footer>
+                    <button name="audit_win_submit" string="Cancel the application" type="object" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+            </field>
+        </record>
+        
+        <!-- proxy view -->
+        <record id="view_audit_win_proxy" model="ir.ui.view">
+            <field name="name">loading...</field>
+            <field name="model">audit.win</field>
+            <field name="arch" type="xml">
+             <form string="Auditting window" version="7.0">
+                <p class="oe_grey">
+                   please wait for a while , the list is loading...
+                </p>
+            </form>
+            </field>
+        </record>
+        
+        <!-- submit action -->
+        <record id="action_audit_win_submit" model="ir.actions.act_window">
+            <field name="name">Submit the application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">audit.win</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_audit_win_submit"/>
+            <field name="target">new</field>
+        </record>
+        
+        <record id ="action_audit_win_submit_view" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="action_audit_win_submit"/>
+            <field name="sequence">20</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref = "view_audit_win_submit"/>
+        </record>
+        
+        <!-- reject action -->
+        <record id="action_audit_win_reject" model="ir.actions.act_window">
+            <field name="name">Reject the application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">audit.win</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_audit_win_reject"/>
+            <field name="target">new</field>
+        </record>
+        
+        <record id ="action_audit_win_reject_view" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="action_audit_win_reject"/>
+            <field name="sequence">20</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref = "view_audit_win_reject"/>
+        </record>
+        
+        <!-- cancel action -->
+        <record id="action_audit_win_cancel" model="ir.actions.act_window">
+            <field name="name">Cancel the application</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">audit.win</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_audit_win_cancel"/>
+            <field name="target">new</field>
+        </record>
+        
+        <record id ="action_audit_win_cancel_view" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="action_audit_win_cancel"/>
+            <field name="sequence">20</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref = "view_audit_win_cancel"/>
+        </record>
+        
+        <!-- proxy action -->
+        <record id="action_audit_win_proxy" model="ir.actions.act_window">
+            <field name="name">loading...</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">audit.win</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_audit_win_proxy"/>
+        </record>
+        
+        <record id ="action_audit_win_proxy_view" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="action_audit_win_proxy"/>
+            <field name="sequence">20</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref = "view_audit_win_proxy"/>
+        </record>
+
+         
+    </data>
+</openerp>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>       
+         <!-- add employee action  -->
+         <record model="ir.actions.act_window" id="action_add_employee">
+            <field name="name">Add Employee</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+         </record>
+         
+         <record id="users_employee_id" model="ir.ui.view">
+            <field name="name">users.employee.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="employee_id" groups="base.group_user"/> 
+                    <button type="action" name="%(set_position.action_add_employee)d" string="Add Employee" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

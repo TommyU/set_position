@@ -266,7 +266,7 @@ class position_application(osv.osv):
     def send_email(self,cr,uid,ids,current_step,op_type,title,comment,context=None):   
         '''
         '  发送邮件
-        '''          
+        '''
         oper= self.pool.get('res.users').browse(cr,1,uid)
         mail_obj = self.pool.get('mail.mail')
         
@@ -302,16 +302,16 @@ class position_application(osv.osv):
                                   'body_html':"<span style='display:block; color:gray;'>"+
                                                                      additional_msg.replace("\n","<br>") + 
                                                                      #("</span><br><b>Comments from Mr./MS %s:</b><br>(%s先生/小姐的备注:)<br><br>"%(oper,oper)) +
-                                                                     '<table style=\'border-collapse:collapse;\'>'+                                                                     
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>position application:<br>(职位申请表:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+app.name+'</td></tr>'+
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>submitter:<br>(提交人:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+oper.name+'</td></tr>'+
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>operation:<br>(操作:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+op_type+'</td></tr>'+
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>summery:<br>(意见概要:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+(title or ' ')+ '</td></tr>'+
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>detailed comment:<br>(意见详细:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+(comment or ' ') +'</td></tr>'+
-                                                                     '<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>application link:<br>(申请表链接:)<br></td><td style=\'border:solid 1px #112233; width:400px\'><a href=\''+url+'\' target=\'_blank\'>'+app.name+'</a></td></tr>'+
-                                                                     '</table>' + 
-                                                                     "<br>"+"="*64+                                                                     
-                                                                     "<span style='display:block; color:gray;'>note(注意事项):<br>please do not reply on this email because it is a system email thus nobody will response to your reply.<br>请勿回复此邮件，因为这个是系统自动发送的邮件。<br>please do not transfer this email for information security.<br>为了信息保密安全请勿转发此邮件。</span>"
+                                                                     u'<table style=\'border-collapse:collapse;\'>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>position application:<br>(职位申请表:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+app.name+'</td></tr>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>submitter:<br>(提交人:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+oper.name+'</td></tr>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>operation:<br>(操作:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+op_type+'</td></tr>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>summery:<br>(意见概要:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+(title or ' ')+ '</td></tr>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>detailed comment:<br>(意见详细:)<br></td><td style=\'border:solid 1px #112233; width:400px\'>'+(comment or ' ') +'</td></tr>'+
+                                                                     u'<tr><td style=\'border:solid 1px #112233; width:200px; background-color:skyblue;\'>application link:<br>(申请表链接:)<br></td><td style=\'border:solid 1px #112233; width:400px\'><a href=\''+url+'\' target=\'_blank\'>'+app.name+'</a></td></tr>'+
+                                                                     u'</table>' +
+                                                                     u"<br>"+"="*64+
+                                                                     u"<span style='display:block; color:gray;'>note(注意事项):<br>please do not reply on this email because it is a system email thus nobody will response to your reply.<br>请勿回复此邮件，因为这个是系统自动发送的邮件。<br>please do not transfer this email for information security.<br>为了信息保密安全请勿转发此邮件。</span>"
                                                                      +"="*64  
                                   }
                                  )
@@ -425,8 +425,8 @@ class position_application(osv.osv):
             mail_to_addrs = map(lambda x:x.notification_email_send!='none' and x.employee_id and x.employee_id.department_id.id ==application.target_department.id and x.email or '', user_obj.browse(cr,1,mail_to_user_ids))
         else:
             if next_step in ('VP',):#总经理
-                #如果是 注塑/模具课，只到有马先生出审批即可。其他正常(此部分硬编码,TODO:用配置实现)
-                ym_uid = user_obj.search(cr,1,[(u'name','like',u'有马健壹')])
+                #如果是 注塑/模具课，只到副总审批即可。其他正常(此部分硬编码,TODO:用配置实现)
+                ym_uid = user_obj.search(cr,1,[(u'name','like',u'某某副总')])
                 if u'注塑' in application.target_department.name or u'模具' in application.target_department.name:
                     mail_to_user_ids=ym_uid
                 else:
@@ -488,8 +488,8 @@ class position_application(osv.osv):
         '''重写search实现权限控制'''
         if not self._has_full_access:#当前用户不是人资/董事长的话，只能看到相应部门的申请单
             if self._is_vp(cr, user):
-                #总经理：如果是 注塑/模具课，只到有马先生出审批即可。其他正常(此部分硬编码,TODO:用配置实现)
-                ym_uid = self.pool.get('res.users').search(cr,1,[(u'name','like',u'有马健壹')])
+                #总经理：如果是 注塑/模具课，只到副总审批即可。其他正常(此部分硬编码,TODO:用配置实现)
+                ym_uid = self.pool.get('res.users').search(cr,1,[(u'name','like',u'某某副总')])
                 ym_dept_ids=self.pool.get('hr.department').search(cr,1,['|',(u'name','like',u'注塑'),(u'name','like',u'模具')])
                 if(user in ym_uid):
                     args.append([u'target_department',u'in',tuple(ym_dept_ids)])

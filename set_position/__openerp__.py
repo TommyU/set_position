@@ -2,7 +2,7 @@
 #/#############################################################################
 #
 #    Tommy.Yu
-#    Copyright (C) 2004-TODAY Tommy.Yu(https://me.alipay.com/tommysz).
+#    Copyright (C) 2004-TODAY Tommy.Yu(tommy.ywt@gmail.com).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,7 +19,7 @@
 #
 #/#############################################################################
 {
-    'name': 'set_position',
+    'name': 'recruitment request',
     'version': '1.0',
     'category': '',
     "sequence": 20,
@@ -27,11 +27,11 @@
     'description': """
     common position application for company position management.
 
-    for more information,please contact me at lion_awake@163.com.
+    for more information,please contact me at tommy.ywt@gmail.com.
 
     """,
     'author': 'Tommy.Yu',
-    'website': 'http://www.cnblogs.com/Tommy-Yu/',
+    'website': 'tommy.ywt@gmail.com',
     'images': [],
     'depends': ['base','hr'],
     'init_xml': [],

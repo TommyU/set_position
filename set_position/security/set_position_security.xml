@@ -21,7 +21,7 @@
 	        <field name="name">guest menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for guest.</field>
-	        <field name="users" eval="[(4, ref('set_position.position_application_guest'))]"/>
+	        <field name="users" eval="[(4, ref('set_position.position_application_guest')),(4, ref('base.user_root'))]"/>
 	    </record>
         
         <!-- =========================hr============================================ -->
@@ -29,6 +29,7 @@
 	        <field name="name">HR menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for HR.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	    </record>
 	    
 	    <record id="set_position.hr_user" model="res.groups">
@@ -51,6 +52,7 @@
 	        <field name="name">sm menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for section manager.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	    </record>
 	    
 	    <!-- section manager -->
@@ -66,6 +68,7 @@
 	        <field name="name">dm menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for dept manager.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	    </record>
 	    
 	    <!-- dept manager -->
@@ -81,6 +84,7 @@
 	        <field name="name">vp menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for vice president.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	    </record>
 	    
 	    <!-- vp -->
@@ -96,6 +100,7 @@
 	        <field name="name">president menu role</field>
 	        <field name="category_id" ref="base.set_position"/>
 	        <field name="comment">the user will be able to access the menu for president.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
 	    </record>
 	    
 	    <!-- president -->
